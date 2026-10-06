@@ -62,7 +62,7 @@ export default function Navbar() {
           </div>
         </a>
 
-        {/* Links de escritorio y móvil */}
+        {/* Links de navegación */}
         <ul className={`nav-links ${mobileMenuOpen ? 'is-open' : ''}`}>
           <li>
             <a href="#inicio" className="nav-link" onClick={closeMenu}>Inicio</a>
@@ -79,35 +79,10 @@ export default function Navbar() {
           <li>
             <a href="#cotizador" className="nav-link" onClick={closeMenu}>Cotizador</a>
           </li>
-          <li className="mobile-only" style={{ marginTop: '12px' }}>
-            <a 
-              href={getWhatsAppUrl()} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-whatsapp" 
-              style={{ width: '100%' }}
-              onClick={closeMenu}
-            >
-              <WhatsAppIcon size={18} />
-              <span>Cotizar por WhatsApp</span>
-            </a>
-          </li>
         </ul>
 
-        {/* CTA en Desktop */}
+        {/* Botón hamburguesa para móvil */}
         <div className="nav-cta">
-          <a 
-            href={getWhatsAppUrl()} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn btn-whatsapp"
-            style={{ padding: '10px 20px', fontSize: '0.9rem' }}
-          >
-            <WhatsAppIcon size={18} />
-            <span>Cotizar en WhatsApp</span>
-          </a>
-
-          {/* Botón hamburguesa móvil */}
           <button 
             type="button" 
             className="menu-toggle" 

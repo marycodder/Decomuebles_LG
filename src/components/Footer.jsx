@@ -18,7 +18,7 @@ export default function Footer() {
 
       <div className="container">
         <div className="footer-top">
-          
+
           {/* Marca y Presentación */}
           <div className="footer-brand">
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
@@ -31,34 +31,34 @@ export default function Footer() {
               </div>
               <h3 style={{ margin: 0 }}>{siteConfig.brandName}</h3>
             </div>
-            
+
             <p>
-              Especialistas en asesoría, diseño, fabricación e instalación de muebles 
+              Especialistas en asesoría, diseño, fabricación e instalación de muebles
               100% personalizados para cocinas, clósets, baños y remodelaciones integrales.
             </p>
 
             <div className="footer-socials">
-              <a 
-                href={getWhatsAppUrl()} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="footer-social-link" 
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
                 aria-label="WhatsApp"
               >
                 <WhatsAppIcon size={20} />
               </a>
-              <a 
-                href={siteConfig.instagramUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="footer-social-link" 
+              <a
+                href={siteConfig.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
                 aria-label="Instagram"
               >
                 <InstagramIcon size={20} />
               </a>
-              <a 
-                href={`mailto:${siteConfig.email}`} 
-                className="footer-social-link" 
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="footer-social-link"
                 aria-label="Correo"
               >
                 <MailIcon size={20} />
@@ -123,9 +123,6 @@ export default function Footer() {
         <div className="footer-bottom">
           <div>
             © {currentYear} <strong>{siteConfig.brandName}</strong>. Todos los derechos reservados.
-          </div>
-          <div>
-            Diseño & Carpintería de Alta Calidad
           </div>
         </div>
 

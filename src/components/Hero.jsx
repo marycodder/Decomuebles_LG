@@ -1,18 +1,26 @@
 import React from 'react';
 import { siteConfig, getWhatsAppUrl } from '../config/siteConfig';
-import { WhatsAppIcon, ArrowRightIcon, CheckCircleIcon, KitchenIcon, ClosetIcon, BathIcon, SparklesIcon } from './Icons';
+import { 
+  WhatsAppIcon, 
+  ArrowRightIcon, 
+  CheckCircleIcon, 
+  RulerIcon, 
+  ShieldCheckIcon, 
+  ToolsIcon, 
+  SparklesIcon 
+} from './Icons';
 
 export default function Hero() {
   return (
     <section id="inicio" className="hero-section">
       <div className="container">
         <div className="hero-grid">
-          
+
           {/* Contenido textual del Hero */}
           <div className="hero-content">
             <div className="hero-pill">
               <span className="hero-pill-indicator"></span>
-              <span>Mueblería y Carpintería a Medida en Chile</span>
+              <span>Mueblería y carpintería a medida en Chile</span>
             </div>
 
             {/* Mensaje cálido principal solicitado por el usuario */}
@@ -23,16 +31,16 @@ export default function Hero() {
             </div>
 
             <p className="hero-description">
-              Transformamos tus espacios en lugares funcionales, elegantes y duraderos. 
-              Trabajamos con materiales de primera calidad, cantos termofusionados y herrajes 
+              Transformamos tus espacios en lugares funcionales, elegantes y duraderos.
+              Trabajamos con materiales de primera calidad, cantos termofusionados y herrajes
               de cierre suave para que disfrutes de tu hogar con la máxima comodidad.
             </p>
 
             <div className="hero-actions">
-              <a 
-                href={getWhatsAppUrl()} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-whatsapp"
                 style={{ padding: '16px 32px', fontSize: '1.05rem' }}
               >
@@ -41,7 +49,7 @@ export default function Hero() {
               </a>
 
               <a href="#trabajos" className="btn btn-outline" style={{ padding: '16px 28px' }}>
-                <span>Ver Trabajos Realizados</span>
+                <span>Ver trabajos realizados</span>
                 <ArrowRightIcon size={18} />
               </a>
             </div>
@@ -50,60 +58,61 @@ export default function Hero() {
             <div className="hero-badges-row">
               <div className="hero-badge-item">
                 <CheckCircleIcon size={18} className="hero-badge-icon" />
-                <span>Fabricación 100% a Medida</span>
+                <span>Fabricación 100% a medida</span>
               </div>
               <div className="hero-badge-item">
                 <CheckCircleIcon size={18} className="hero-badge-icon" />
-                <span>Herrajes de Cierre Suave</span>
+                <span>Herrajes de cierre suave</span>
               </div>
               <div className="hero-badge-item">
                 <CheckCircleIcon size={18} className="hero-badge-icon" />
-                <span>Instalación Limpia y Precisa</span>
+                <span>Instalación limpia y precisa</span>
               </div>
             </div>
           </div>
 
-          {/* Tarjeta Visual de Presentación con los Servicios Clave */}
+          {/* Tarjeta Visual de Presentación con los Pilares de Calidad */}
           <div className="hero-visual">
             <div className="hero-card">
               <div className="hero-card-pattern"></div>
-              
+
               <div className="hero-card-header">
                 <div>
-                  <h3 style={{ fontSize: '1.3rem', color: 'var(--clr-dark-wood)' }}>Especialistas en Espacios</h3>
-                  <p style={{ fontSize: '0.85rem' }}>Diseño y fabricación sin límites</p>
+                  <h3 style={{ fontSize: '1.3rem', color: 'var(--clr-dark-wood)' }}>Estándares de Calidad</h3>
+                  <p style={{ fontSize: '0.85rem' }}>Compromiso y excelencia en cada detalle</p>
                 </div>
                 <span className="hero-card-badge">Calidad LG</span>
               </div>
 
+              {/* Pilares integrados en la tarjeta visual */}
               <div className="hero-card-features">
                 <div className="hero-feature-box">
                   <div className="hero-feature-icon">
-                    <KitchenIcon size={24} />
+                    <RulerIcon size={24} />
                   </div>
                   <div>
-                    <h4 className="hero-feature-title">Cocinas Integrales & Islas</h4>
-                    <p className="hero-feature-desc">Muebles aéreos, torres de hornos, cubiertas de cuarzo y despensas organizadas.</p>
+                    <h4 className="hero-feature-title">Diseño 100% a tu medida</h4>
+                    <p className="hero-feature-desc">Aprovechamos cada milímetro de tu espacio disponible con precisión.</p>
                   </div>
                 </div>
 
                 <div className="hero-feature-box">
                   <div className="hero-feature-icon">
-                    <ClosetIcon size={24} />
+                    <ShieldCheckIcon size={24} />
                   </div>
                   <div>
-                    <h4 className="hero-feature-title">Clósets & Walk-in Dressing</h4>
-                    <p className="hero-feature-desc">Optimización total de altura, zapateros, pantaloneros e iluminación LED.</p>
+                    <h4 className="hero-feature-title">Melaminas & cantos sellados</h4>
+                    <p className="hero-feature-desc">Tableros de 18mm y tapacantos termofusionados de alta durabilidad.</p>
                   </div>
                 </div>
 
                 <div className="hero-feature-box">
                   <div className="hero-feature-icon">
-                    <BathIcon size={24} />
+                    <ToolsIcon size={24} />
                   </div>
                   <div>
-                    <h4 className="hero-feature-title">Vanitorios & Muebles de Baño</h4>
-                    <p className="hero-feature-desc">Materiales resistentes a la humedad, modelos flotantes y frentes ranurados.</p>
+                    <h4 className="hero-feature-title">Herrajes de cierre suave</h4>
+                    <p className="hero-feature-desc">Bisagras hidráulicas y correderas silenciosas de alta gama.</p>
                   </div>
                 </div>
 
@@ -112,8 +121,8 @@ export default function Hero() {
                     <SparklesIcon size={24} />
                   </div>
                   <div>
-                    <h4 className="hero-feature-title">Muebles de Living & TV</h4>
-                    <p className="hero-feature-desc">Racks modernos, paneles acústicos y repisas a la medida exacta de tu muro.</p>
+                    <h4 className="hero-feature-title">Instalación profesional</h4>
+                    <p className="hero-feature-desc">Montaje limpio, seguro, nivelación perfecta y entrega garantizada.</p>
                   </div>
                 </div>
               </div>
@@ -123,10 +132,10 @@ export default function Hero() {
                   <h4>¿Tienes un proyecto en mente?</h4>
                   <p>Te asesoramos y enviamos cotización rápida</p>
                 </div>
-                <a 
-                  href={getWhatsAppUrl("¡Hola DecoMuebles LG! Quiero consultar por un proyecto para mi casa:")} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href={getWhatsAppUrl("¡Hola DecoMuebles LG! Quiero consultar por un proyecto para mi casa:")}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary"
                   style={{ padding: '10px 18px', fontSize: '0.85rem' }}
                 >

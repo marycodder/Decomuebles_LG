@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Pillars from './components/Pillars';
 import Services from './components/Services';
 import Trabajos from './components/Trabajos';
 import Process from './components/Process';
@@ -17,11 +16,8 @@ export default function App() {
 
       {/* Contenido Principal */}
       <main id="main-content">
-        {/* Hero con el mensaje cálido y llamado a la acción */}
+        {/* Hero con el mensaje cálido y tarjeta con los pilares de calidad */}
         <Hero />
-
-        {/* Pilares de confianza y calidad */}
-        <Pillars />
 
         {/* Servicios que ofrecemos */}
         <Services />
