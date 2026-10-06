@@ -1,0 +1,22 @@
+===================================================================
+CARPETA PARA TUS FOTOS DE TRABAJOS REALIZADOS - DECOMUEBLESLG
+===================================================================
+
+¡Hola! Aquí es donde debes pegar las fotos de tus muebles y proyectos.
+
+Pasos sencillos:
+1. Copia tus fotos dentro de esta misma carpeta: (public/fotos/)
+   Por ejemplo:
+   - mi-cocina.jpg
+   - mi-closet.jpg
+   - mi-vanitorio.jpg
+
+2. Abre el archivo: 'src/data/trabajos.js'
+   y actualiza la línea 'imagen:' con el nombre de tu archivo:
+   imagen: "/fotos/mi-cocina.jpg"
+
+3. Puedes agregar todos los proyectos que quieras siguiendo el formato en 'src/data/trabajos.js'.
+
+Formatos recomendados: .jpg, .jpeg, .png, .webp
+Para que la página cargue rápido, recomendamos fotos de hasta 2MB de peso.
+===================================================================
