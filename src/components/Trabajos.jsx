@@ -18,10 +18,10 @@ export default function Trabajos() {
       <div className="container">
 
         <div className="section-header">
-          <div className="section-tag tag-warm">Portafolio & Galería</div>
-          <h2 className="section-title">Trabajos Realizados</h2>
+          <div className="section-tag tag-warm">Portafolio y galería</div>
+          <h2 className="section-title">Trabajos realizados</h2>
           <p className="section-subtitle">
-            Explora algunos de nuestros proyectos fabricados e instalados. 
+            Explora algunos de nuestros proyectos fabricados e instalados.
             Cada espacio refleja la combinación perfecta entre diseño contemporáneo y máxima funcionalidad.
           </p>
         </div>
@@ -49,9 +49,9 @@ export default function Trabajos() {
 
             return (
               <article key={trabajo.id} className="trabajo-card">
-                
+
                 {/* Contenedor de la Imagen / Fallback */}
-                <div 
+                <div
                   className="trabajo-img-wrap"
                   onClick={() => setTrabajoSeleccionado(trabajo)}
                   role="button"
@@ -65,9 +65,9 @@ export default function Trabajos() {
                 >
                   <span className="trabajo-badge-cat">{trabajo.categoria}</span>
 
-                  <img 
-                    src={trabajo.imagen} 
-                    alt={trabajo.titulo} 
+                  <img
+                    src={trabajo.imagen}
+                    alt={trabajo.titulo}
                     className="trabajo-img"
                     loading="lazy"
                     onError={(e) => {
@@ -109,17 +109,17 @@ export default function Trabajos() {
                   )}
 
                   <div className="trabajo-actions">
-                    <button 
-                      type="button" 
+                    <button
+                      type="button"
                       className="btn-detail"
                       onClick={() => setTrabajoSeleccionado(trabajo)}
                     >
                       Ver Detalle
                     </button>
-                    <a 
+                    <a
                       href={getWhatsAppUrl(whatsappMsg)}
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="btn-quote"
                       title="Cotizar este modelo por WhatsApp"
                     >
@@ -134,26 +134,13 @@ export default function Trabajos() {
           })}
         </div>
 
-        {/* Banner informativo para que el usuario sepa cómo subir sus fotos */}
-        <div className="upload-help-banner">
-          <div className="upload-help-content">
-            <h4>📁 ¿Cómo subir tus propias fotos?</h4>
-            <p>
-              Simplemente guarda tus fotos en la carpeta <strong>public/fotos/</strong> de este proyecto 
-              y actualiza los nombres en el archivo <strong>src/data/trabajos.js</strong>. ¡Se actualizarán al instante!
-            </p>
-          </div>
-          <a href="#cotizador" className="btn btn-dark" style={{ whiteSpace: 'nowrap' }}>
-            Ir al Cotizador
-          </a>
-        </div>
-
       </div>
 
+
       {/* Modal de Detalle */}
-      <TrabajoModal 
-        trabajo={trabajoSeleccionado} 
-        onClose={() => setTrabajoSeleccionado(null)} 
+      <TrabajoModal
+        trabajo={trabajoSeleccionado}
+        onClose={() => setTrabajoSeleccionado(null)}
       />
     </section>
   );

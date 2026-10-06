@@ -10,17 +10,17 @@ export default function Pillars() {
     },
     {
       icon: <ShieldCheckIcon size={24} />,
-      title: "Melaminas & Cantos Sellados",
-      subtitle: "Tableros de 18mm y tapacantos termofusionados duraderos."
+      title: "Melaminas y cantos sellados",
+      subtitle: "Tableros de 18mm y tapacantos sellados de alta durabilidad."
     },
     {
       icon: <ToolsIcon size={24} />,
-      title: "Herrajes de Cierre Suave",
+      title: "Herrajes de cierre suave",
       subtitle: "Bisagras hidráulicas y correderas silenciosas de alta gama."
     },
     {
       icon: <SparklesIcon size={24} />,
-      title: "Instalación Profesional",
+      title: "Instalación profesional",
       subtitle: "Montaje limpio, seguro y con garantía de satisfacción."
     }
   ];

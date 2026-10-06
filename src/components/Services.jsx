@@ -20,7 +20,7 @@ export default function Services() {
     {
       id: "closets",
       icon: <ClosetIcon size={28} />,
-      title: "Clósets & Vestidores",
+      title: "Clósets y vestidores",
       desc: "Organización perfecta para tu vestimenta y accesorios, con distribución personalizada según tus hábitos y espacio disponible.",
       items: [
         "Walk-in closets y vestidores abiertos",
@@ -33,7 +33,7 @@ export default function Services() {
     {
       id: "banos",
       icon: <BathIcon size={28} />,
-      title: "Baños & Vanitorios",
+      title: "Baños y vanitorios",
       desc: "Vanitorios modernos y muebles suspendidos elaborados con sustratos resistentes al vapor y humedad para una larga vida útil.",
       items: [
         "Vanitorios flotantes y sobre pedestal",
@@ -46,7 +46,7 @@ export default function Services() {
     {
       id: "living",
       icon: <TvIcon size={28} />,
-      title: "Living & Centros de TV",
+      title: "Living y centros de TV",
       desc: "Muebles de entretenimiento que realzan tu sala de estar, con diseño contemporáneo y gestión inteligente para ocultar cables.",
       items: [
         "Paneles acústicos y listones de madera ranurada",
@@ -59,20 +59,21 @@ export default function Services() {
     {
       id: "especiales",
       icon: <SparklesIcon size={28} />,
-      title: "Decoración & Muebles Especiales",
+      title: "Decoración y muebles especiales",
       desc: "Creamos piezas únicas para tus espacios de trabajo, estudio o locales comerciales con la identidad que buscas.",
       items: [
         "Estaciones de trabajo Home-Office y escritorios",
         "Bibliotecas murales y libreros de alta resistencia",
         "Recepciones y mobiliario para oficinas/locales",
-        "Muebles bajo escala y gaveteros especiales"
+        "Muebles bajo escala y gaveteros especiales",
+        "Vitrinas para cafeterías"
       ],
       whatsappMsg: "¡Hola DecoMuebles LG! Quiero consultar por un diseño especial o mueble decorativo."
     },
     {
       id: "asesoria",
       icon: <ToolsIcon size={28} />,
-      title: "Asesorías & Fabricación Integral",
+      title: "Asesorías y fabricación integral",
       desc: "Te acompañamos desde la toma de medidas en tu domicilio hasta la instalación final y ajustes de herrajes.",
       items: [
         "Visita a terreno y levantamiento de medidas",
@@ -87,12 +88,12 @@ export default function Services() {
   return (
     <section id="servicios" className="section services-section">
       <div className="container">
-        
+
         <div className="section-header">
-          <div className="section-tag tag-olive">Lo Que Hacemos</div>
-          <h2 className="section-title">Soluciones Integrales en Mueblería</h2>
+          <div className="section-tag tag-olive">Lo que hacemos</div>
+          <h2 className="section-title">Soluciones integrales en mueblería</h2>
           <p className="section-subtitle">
-            Cada mueble es confeccionado con precisión milimétrica y atención a los detalles, 
+            Cada mueble es confeccionado con precisión milimétrica y atención a los detalles,
             garantizando durabilidad, estética y funcionalidad para tus ambientes.
           </p>
         </div>
@@ -105,7 +106,7 @@ export default function Services() {
               </div>
               <h3 className="service-title">{s.title}</h3>
               <p className="service-desc">{s.desc}</p>
-              
+
               <ul className="service-list">
                 {s.items.map((it, i) => (
                   <li key={i} className="service-list-item">
@@ -115,9 +116,9 @@ export default function Services() {
                 ))}
               </ul>
 
-              <a 
+              <a
                 href={getWhatsAppUrl(s.whatsappMsg)}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 className="service-cta"
               >

@@ -21,20 +21,19 @@ export default function Footer() {
 
           {/* Marca y Presentación */}
           <div className="footer-brand">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
-              <div className="brand-mark" style={{ width: '38px', height: '38px' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <rect x="3" y="3" width="18" height="6" rx="1" fill="#F2A663" />
-                  <rect x="3" y="11" width="8" height="10" rx="1" fill="#D9BE36" />
-                  <rect x="13" y="11" width="8" height="10" rx="1" fill="#C9DFF2" />
-                </svg>
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
+              <img
+                src="/logo.png"
+                alt="Logo DecoMuebles LG"
+                className="brand-logo-img"
+                style={{ width: '40px', height: '40px' }}
+              />
               <h3 style={{ margin: 0 }}>{siteConfig.brandName}</h3>
             </div>
 
             <p>
-              Especialistas en asesoría, diseño, fabricación e instalación de muebles
-              100% personalizados para cocinas, clósets, baños y remodelaciones integrales.
+              Especialistas en asesoría, diseño, fabricación e instalación de todo tipo de muebles,
+              100% personalizados para cocinas, clósets, baños, centros de mesa, libreros, estanterías, repisas
             </p>
 
             <div className="footer-socials">
@@ -72,9 +71,9 @@ export default function Footer() {
             <ul className="footer-links">
               <li><a href="#inicio">Inicio</a></li>
               <li><a href="#servicios">Servicios</a></li>
-              <li><a href="#trabajos">Trabajos Realizados</a></li>
-              <li><a href="#proceso">Cómo Trabajamos</a></li>
-              <li><a href="#cotizador">Cotizador Online</a></li>
+              <li><a href="#trabajos">Trabajos realizados</a></li>
+              <li><a href="#proceso">Cómo trabajamos</a></li>
+              <li><a href="#cotizador">Cotizador online</a></li>
             </ul>
           </div>
 
@@ -82,17 +81,17 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Especialidades</h4>
             <ul className="footer-links">
-              <li><a href="#trabajos">Cocinas Integrales</a></li>
-              <li><a href="#trabajos">Clósets & Vestidores</a></li>
-              <li><a href="#trabajos">Vanitorios Flotantes</a></li>
-              <li><a href="#trabajos">Centros de TV & Living</a></li>
-              <li><a href="#trabajos">Muebles Comerciales</a></li>
+              <li><a href="#trabajos">Cocinas integrales</a></li>
+              <li><a href="#trabajos">Clósets y vestidores</a></li>
+              <li><a href="#trabajos">Muebles de baño y vanitorios</a></li>
+              <li><a href="#trabajos">Centros de TV y living</a></li>
+              <li><a href="#trabajos">Muebles comerciales y oficinas</a></li>
             </ul>
           </div>
 
           {/* Datos de Contacto */}
           <div className="footer-col">
-            <h4>Contacto Directo</h4>
+            <h4>Contacto directo</h4>
             <div className="footer-contact-items">
               <div className="footer-contact-item">
                 <WhatsAppIcon size={18} />

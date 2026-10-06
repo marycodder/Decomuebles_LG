@@ -10,16 +10,16 @@ export default function CotizadorWhatsApp() {
 
   // Construcción del mensaje dinámico estructurado
   const generateMessage = () => {
-    let msg = `¡Hola DecoMuebles LG! 👋 Vengo desde su página web y me gustaría cotizar un mueble a medida:\n\n`;
-    msg += `🪵 *Tipo de mueble:* ${tipoMueble}\n`;
+    let msg = `¡Hola DecoMuebles LG! Vengo desde su página web y me gustaría cotizar un mueble a medida:\n\n`;
+    msg += ` *Tipo de mueble:* ${tipoMueble}\n`;
     if (medidas.trim()) {
-      msg += `📏 *Medidas aproximadas / espacio:* ${medidas.trim()}\n`;
+      msg += `*Medidas aproximadas / espacio:* ${medidas.trim()}\n`;
     }
     if (comuna.trim()) {
-      msg += `📍 *Ubicación / Comuna:* ${comuna.trim()}\n`;
+      msg += `*Ubicación:* ${comuna.trim()}\n`;
     }
     if (detalles.trim()) {
-      msg += `✨ *Detalles adicionales:* ${detalles.trim()}\n`;
+      msg += `*Detalles adicionales:* ${detalles.trim()}\n`;
     }
     msg += `\n¿Podrían darme una orientación o cotización? ¡Muchas gracias!`;
     return msg;
@@ -31,12 +31,12 @@ export default function CotizadorWhatsApp() {
   return (
     <section id="cotizador" className="section cotizador-section">
       <div className="container">
-        
+
         <div className="section-header">
-          <div className="section-tag tag-olive">Cotización Inmediata</div>
-          <h2 className="section-title">Cotiza tu Proyecto por WhatsApp</h2>
+          <div className="section-tag tag-olive">Cotización inmediata</div>
+          <h2 className="section-title">Cotiza tu proyecto por WhatsApp</h2>
           <p className="section-subtitle">
-            Completa los datos de tu idea o envíanos un mensaje directo. 
+            Completa los datos de tu idea o envíanos un mensaje directo.
             Te responderemos a la brevedad con una asesoría personalizada.
           </p>
         </div>
@@ -44,42 +44,43 @@ export default function CotizadorWhatsApp() {
         <div className="cotizador-box">
           <div className="cotizador-header">
             <div>
-              <h3>Asistente de Cotización Rápida</h3>
+              <h3>Asistente de cotización rápida</h3>
               <p>Elige tu tipo de mueble y envíalo en un clic a nuestro WhatsApp</p>
             </div>
             <div className="cotizador-header-badge">
               <WhatsAppIcon size={18} />
-              <span>Respuesta Rápida</span>
+              <span>Respuesta rápida</span>
             </div>
           </div>
 
-          <form 
-            className="cotizador-form" 
+          <form
+            className="cotizador-form"
             onSubmit={(e) => {
               e.preventDefault();
               window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
             }}
           >
             <div className="form-grid">
-              
+
               {/* Tipo de Mueble */}
               <div className="form-group">
                 <label className="form-label" htmlFor="tipo-mueble">
                   ¿Qué tipo de mueble necesitas? *
                 </label>
-                <select 
-                  id="tipo-mueble" 
+                <select
+                  id="tipo-mueble"
                   className="form-select"
                   value={tipoMueble}
                   onChange={(e) => setTipoMueble(e.target.value)}
                 >
-                  <option value="Cocina Integral">Cocina Integral a Medida</option>
-                  <option value="Clóset o Vestidor">Clóset / Walk-in Closet</option>
-                  <option value="Vanitorio de Baño">Vanitorio o Mueble de Baño</option>
-                  <option value="Centro de TV o Living">Centro de TV / Rack de Living</option>
-                  <option value="Mueble de Oficina / Home-Office">Estación de Trabajo / Home-Office</option>
-                  <option value="Mueble Comercial o Especial">Diseño Especial / Mueble Comercial</option>
-                  <option value="Varios muebles / Remodelación">Remodelación completa de varios espacios</option>
+                  <option value="Cocina Integral">Cocina integral a medida</option>
+                  <option value="Clóset o Vestidor">Clóset - Walk-in closet</option>
+                  <option value="Muebles de bañ o">Muebles de baño</option>
+                  <option value="Muebles de TV o Living">Muebles para TV - Rack de Living</option>
+                  <option value="Mueble de oficina - Home-Office">Estación de trabajo - Home-Office</option>
+                  <option value="Diseños especiales">Diseños especiales</option>
+                  <option value="Varios muebles">Varios Muebles</option>
+                  <option value="Remodelación completa de varios espacios">Remodelación completa de varios espacios</option>
                 </select>
               </div>
 
@@ -88,9 +89,9 @@ export default function CotizadorWhatsApp() {
                 <label className="form-label" htmlFor="medidas">
                   Medidas estimadas o espacio (opcional)
                 </label>
-                <input 
-                  type="text" 
-                  id="medidas" 
+                <input
+                  type="text"
+                  id="medidas"
                   className="form-input"
                   placeholder="Ej: Muro de 3.20m x 2.40m de alto"
                   value={medidas}
@@ -101,11 +102,11 @@ export default function CotizadorWhatsApp() {
               {/* Comuna / Ciudad */}
               <div className="form-group">
                 <label className="form-label" htmlFor="comuna">
-                  Comuna o Ciudad de instalación
+                  Comuna o ciudad de instalación
                 </label>
-                <input 
-                  type="text" 
-                  id="comuna" 
+                <input
+                  type="text"
+                  id="comuna"
                   className="form-input"
                   placeholder="Ej: Las Condes, Maipú, Providencia, etc."
                   value={comuna}
@@ -118,9 +119,9 @@ export default function CotizadorWhatsApp() {
                 <label className="form-label" htmlFor="detalles">
                   Materiales o preferencias
                 </label>
-                <input 
-                  type="text" 
-                  id="detalles" 
+                <input
+                  type="text"
+                  id="detalles"
                   className="form-input"
                   placeholder="Ej: Melamina roble, cubierta de cuarzo blanco, tirador oculto..."
                   value={detalles}
@@ -144,13 +145,13 @@ export default function CotizadorWhatsApp() {
                 <span>Asesoría directa con el mueblista sin intermediarios</span>
               </div>
 
-              <button 
-                type="submit" 
-                className="btn btn-whatsapp" 
+              <button
+                type="submit"
+                className="btn btn-whatsapp"
                 style={{ padding: '16px 36px', fontSize: '1.05rem' }}
               >
                 <WhatsAppIcon size={22} />
-                <span>Enviar Cotización a WhatsApp</span>
+                <span>Enviar cotización a WhatsApp</span>
                 <SendIcon size={18} />
               </button>
             </div>

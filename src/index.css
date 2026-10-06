@@ -303,16 +303,18 @@ img {
 
 .top-bar-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 16px;
+  text-align: center;
 }
 
 .top-bar-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  opacity: 0.92;
+  opacity: 0.95;
+  font-weight: 500;
 }
 
 .top-bar-item a:hover {
@@ -331,6 +333,22 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(89, 45, 5, 0.22);
+  border: 2px solid var(--clr-warm-wood);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.06);
+  box-shadow: 0 6px 16px rgba(89, 45, 5, 0.3);
 }
 
 .brand-mark {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { siteConfig, getWhatsAppUrl } from '../config/siteConfig';
-import { WhatsAppIcon, PhoneIcon, MapPinIcon, MenuIcon, CloseIcon } from './Icons';
+import { siteConfig } from '../config/siteConfig';
+import { MapPinIcon, MenuIcon, CloseIcon } from './Icons';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,28 +10,12 @@ export default function Navbar() {
 
   return (
     <header className="navbar-wrapper">
-      {/* Barra de contacto superior */}
+      {/* Barra de ubicación superior */}
       <div className="top-bar">
         <div className="container top-bar-inner">
           <div className="top-bar-item">
             <MapPinIcon size={14} />
             <span>{siteConfig.location}</span>
-          </div>
-          <div style={{ display: 'flex', gap: '20px' }}>
-            <div className="top-bar-item">
-              <PhoneIcon size={14} />
-              <a href={`tel:${siteConfig.whatsappNumber}`}>{siteConfig.whatsappDisplay}</a>
-            </div>
-            <div className="top-bar-item">
-              <WhatsAppIcon size={14} />
-              <a 
-                href={getWhatsAppUrl()} 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Atención rápida vía WhatsApp
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -48,14 +32,11 @@ export default function Navbar() {
       {/* Navegación principal */}
       <nav className="container navbar">
         <a href="#inicio" className="brand-logo" onClick={closeMenu}>
-          <div className="brand-mark" aria-label="Logo DecoMuebles LG">
-            {/* Símbolo geométrico de carpintería */}
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <rect x="3" y="3" width="18" height="6" rx="1" fill="#F2A663" />
-              <rect x="3" y="11" width="8" height="10" rx="1" fill="#D9BE36" />
-              <rect x="13" y="11" width="8" height="10" rx="1" fill="#C9DFF2" />
-            </svg>
-          </div>
+          <img
+            src="/logo.png"
+            alt="Logo DecoMuebles LG"
+            className="brand-logo-img"
+          />
           <div className="brand-name">
             {siteConfig.brandName}
             <span>Muebles a Medida</span>
@@ -71,7 +52,7 @@ export default function Navbar() {
             <a href="#servicios" className="nav-link" onClick={closeMenu}>Servicios</a>
           </li>
           <li>
-            <a href="#trabajos" className="nav-link" onClick={closeMenu}>Trabajos Realizados</a>
+            <a href="#trabajos" className="nav-link" onClick={closeMenu}>Trabajos realizados</a>
           </li>
           <li>
             <a href="#proceso" className="nav-link" onClick={closeMenu}>Proceso</a>
@@ -83,9 +64,9 @@ export default function Navbar() {
 
         {/* Botón hamburguesa para móvil */}
         <div className="nav-cta">
-          <button 
-            type="button" 
-            className="menu-toggle" 
+          <button
+            type="button"
+            className="menu-toggle"
             onClick={toggleMenu}
             aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
           >

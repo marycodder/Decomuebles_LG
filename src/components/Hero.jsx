@@ -1,13 +1,13 @@
 import React from 'react';
 import { siteConfig, getWhatsAppUrl } from '../config/siteConfig';
-import { 
-  WhatsAppIcon, 
-  ArrowRightIcon, 
-  CheckCircleIcon, 
-  RulerIcon, 
-  ShieldCheckIcon, 
-  ToolsIcon, 
-  SparklesIcon 
+import {
+  WhatsAppIcon,
+  ArrowRightIcon,
+  CheckCircleIcon,
+  RulerIcon,
+  ShieldCheckIcon,
+  ToolsIcon,
+  SparklesIcon
 } from './Icons';
 
 export default function Hero() {
@@ -62,7 +62,7 @@ export default function Hero() {
               </div>
               <div className="hero-badge-item">
                 <CheckCircleIcon size={18} className="hero-badge-icon" />
-                <span>Herrajes de cierre suave</span>
+                <span>Bisagras y correderas de cierre suave</span>
               </div>
               <div className="hero-badge-item">
                 <CheckCircleIcon size={18} className="hero-badge-icon" />
@@ -78,10 +78,9 @@ export default function Hero() {
 
               <div className="hero-card-header">
                 <div>
-                  <h3 style={{ fontSize: '1.3rem', color: 'var(--clr-dark-wood)' }}>Estándares de Calidad</h3>
+                  <h3 style={{ fontSize: '1.3rem', color: 'var(--clr-dark-wood)' }}>Estándares de calidad</h3>
                   <p style={{ fontSize: '0.85rem' }}>Compromiso y excelencia en cada detalle</p>
                 </div>
-                <span className="hero-card-badge">Calidad LG</span>
               </div>
 
               {/* Pilares integrados en la tarjeta visual */}
@@ -111,7 +110,7 @@ export default function Hero() {
                     <ToolsIcon size={24} />
                   </div>
                   <div>
-                    <h4 className="hero-feature-title">Herrajes de cierre suave</h4>
+                    <h4 className="hero-feature-title">Bisagras y correderas con sistema de cierre suave</h4>
                     <p className="hero-feature-desc">Bisagras hidráulicas y correderas silenciosas de alta gama.</p>
                   </div>
                 </div>
@@ -125,23 +124,6 @@ export default function Hero() {
                     <p className="hero-feature-desc">Montaje limpio, seguro, nivelación perfecta y entrega garantizada.</p>
                   </div>
                 </div>
-              </div>
-
-              <div className="hero-contact-quick">
-                <div className="hero-contact-text">
-                  <h4>¿Tienes un proyecto en mente?</h4>
-                  <p>Te asesoramos y enviamos cotización rápida</p>
-                </div>
-                <a
-                  href={getWhatsAppUrl("¡Hola DecoMuebles LG! Quiero consultar por un proyecto para mi casa:")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                  style={{ padding: '10px 18px', fontSize: '0.85rem' }}
-                >
-                  <span>Escríbenos</span>
-                  <ArrowRightIcon size={14} />
-                </a>
               </div>
 
             </div>

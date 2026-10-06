@@ -40,12 +40,12 @@ export default function TrabajoModal({ trabajo, onClose }) {
 
   if (!trabajo) return null;
 
-  const quoteMessage = `¡Hola DecoMuebles LG! 👋 Vi en su página web el proyecto "${trabajo.titulo}" (${trabajo.categoria}) y me gustaría cotizar un mueble similar para mi hogar. ¿Podrían orientarme?`;
+  const quoteMessage = `¡Hola DecoMuebles LG! Vi en su página web el proyecto "${trabajo.titulo}" (${trabajo.categoria}) y me gustaría cotizar un mueble similar para mi hogar. ¿Podrían orientarme?`;
 
   return (
-    <dialog 
-      ref={dialogRef} 
-      className="trabajo-modal" 
+    <dialog
+      ref={dialogRef}
+      className="trabajo-modal"
       closedby="any"
       aria-labelledby="modal-trabajo-title"
       onClose={onClose}
@@ -55,9 +55,9 @@ export default function TrabajoModal({ trabajo, onClose }) {
           <span>{trabajo.categoria}</span>
           <h3 id="modal-trabajo-title">{trabajo.titulo}</h3>
         </div>
-        <button 
-          type="button" 
-          className="modal-close-btn" 
+        <button
+          type="button"
+          className="modal-close-btn"
           onClick={onClose}
           aria-label="Cerrar modal"
         >
@@ -68,8 +68,8 @@ export default function TrabajoModal({ trabajo, onClose }) {
       <div className="modal-content-grid">
         {/* Imagen del trabajo o fallback si aún no la ha subido */}
         <div className="modal-img-area">
-          <img 
-            src={trabajo.imagen} 
+          <img
+            src={trabajo.imagen}
             alt={trabajo.titulo}
             onError={(e) => {
               // Si la foto no existe aún en public/fotos/, mostrar un reemplazo limpio
@@ -92,7 +92,7 @@ export default function TrabajoModal({ trabajo, onClose }) {
 
           {trabajo.materiales && trabajo.materiales.length > 0 && (
             <div>
-              <h4 className="modal-materials-title">Materiales y Componentes:</h4>
+              <h4 className="modal-materials-title">Materiales y componentes:</h4>
               <ul className="modal-materials-list">
                 {trabajo.materiales.map((m, idx) => (
                   <li key={idx}>
@@ -106,10 +106,10 @@ export default function TrabajoModal({ trabajo, onClose }) {
 
           <div className="modal-cta-box">
             <p>¿Te gustaría un diseño similar adaptado a las medidas de tu espacio?</p>
-            <a 
+            <a
               href={getWhatsAppUrl(quoteMessage)}
-              target="_blank" 
-              rel="noopener noreferrer" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-whatsapp"
               style={{ width: '100%' }}
             >
