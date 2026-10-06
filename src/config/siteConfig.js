@@ -4,21 +4,21 @@
 export const siteConfig = {
   // INFORMACIÓN DE CONTACTO
   brandName: "DecoMuebles LG",
-  slogan: "Mueblería y Carpintería de Alta Calidad a Medida",
-  
+  slogan: "Mueblería y carpintería de alta calidad a medida",
+
   // NÚMERO DE WHATSAPP (código de país + número, sin espacios ni símbolos)
   // Ejemplo para Chile: "56912345678" o para otro país: "54911..."
-  whatsappNumber: "56912345678", 
-  whatsappDisplay: "+56 9 1234 5678",
-  
+  whatsappNumber: "56973254807",
+  whatsappDisplay: "+56 9 7325 4807",
+
   // MENSAJE PREDETERMINADO GENERAL PARA WHATSAPP
-  defaultWhatsAppMessage: "¡Hola DecoMuebles LG! 👋 Vengo desde su página web y me gustaría solicitar una asesoría o cotizar un mueble a medida para mi hogar.",
+  defaultWhatsAppMessage: "¡Hola DecoMuebles LG! Vengo desde su página web y me gustaría solicitar una asesoría o cotizar un mueble a medida para mi hogar.",
 
   // OTROS DATOS DE CONTACTO
-  email: "contacto@decolmuebleslg.cl",
-  instagram: "@decolmuebleslg",
-  instagramUrl: "https://instagram.com",
-  location: "Santiago y comunas aledañas",
+  email: "decomuebleslg@gmail.com",
+  instagram: "@decolmuebles_lg",
+  instagramUrl: "https://instagram.com/decolmuebles_lg",
+  location: "Viña del Mar y comunas aledañas",
   horario: "Lunes a Sábado: 09:00 a 19:00 hrs",
 
   // MENSAJE DE BIENVENIDA PRINCIPAL (Texto solicitado)
