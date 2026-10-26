@@ -1,9 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { getWhatsAppUrl } from '../config/siteConfig';
 import { WhatsAppIcon, CloseIcon, CheckCircleIcon, ImageIcon } from './Icons';
 
 export default function TrabajoModal({ trabajo, onClose }) {
   const dialogRef = useRef(null);
+  const [activeImgIndex, setActiveImgIndex] = useState(0);
+
+  useEffect(() => {
+    setActiveImgIndex(0);
+  }, [trabajo]);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -19,7 +24,6 @@ export default function TrabajoModal({ trabajo, onClose }) {
       }
     }
 
-    // Fallback de "light-dismiss" para navegadores antiguos que no soportan closedby="any"
     const handleBackdropClick = (event) => {
       if (event.target !== dialog) return;
       const rect = dialog.getBoundingClientRect();
@@ -39,6 +43,14 @@ export default function TrabajoModal({ trabajo, onClose }) {
   }, [trabajo, onClose]);
 
   if (!trabajo) return null;
+
+  const currentImageSrc = trabajo.imagenes && trabajo.imagenes[activeImgIndex]
+    ? trabajo.imagenes[activeImgIndex].src
+    : trabajo.imagen;
+
+  const currentImageLabel = trabajo.imagenes && trabajo.imagenes[activeImgIndex]
+    ? trabajo.imagenes[activeImgIndex].label
+    : trabajo.titulo;
 
   const quoteMessage = `¡Hola DecoMuebles LG! Vi en su página web el proyecto "${trabajo.titulo}" (${trabajo.categoria}) y me gustaría cotizar un mueble similar para mi hogar. ¿Podrían orientarme?`;
 
@@ -66,24 +78,52 @@ export default function TrabajoModal({ trabajo, onClose }) {
       </div>
 
       <div className="modal-content-grid">
-        {/* Imagen del trabajo o fallback si aún no la ha subido */}
+        {/* Imagen del trabajo y selector de fotos múltiples */}
         <div className="modal-img-area">
-          <img
-            src={trabajo.imagen}
-            alt={trabajo.titulo}
-            onError={(e) => {
-              // Si la foto no existe aún en public/fotos/, mostrar un reemplazo limpio
-              e.currentTarget.style.display = 'none';
-              e.currentTarget.nextSibling.style.display = 'flex';
-            }}
-          />
-          <div className="trabajo-placeholder-img" style={{ display: 'none' }}>
-            <div className="trabajo-placeholder-icon">
-              <ImageIcon size={32} />
+          <div className="modal-main-img-wrap">
+            <img
+              src={currentImageSrc}
+              alt={currentImageLabel}
+              key={currentImageSrc}
+              className="modal-active-img"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                if (e.currentTarget.nextSibling) {
+                  e.currentTarget.nextSibling.style.display = 'flex';
+                }
+              }}
+            />
+            <div className="trabajo-placeholder-img" style={{ display: 'none' }}>
+              <div className="trabajo-placeholder-icon">
+                <ImageIcon size={32} />
+              </div>
+              <div className="trabajo-placeholder-title">{trabajo.titulo}</div>
+              <div className="trabajo-placeholder-hint">Espacio para tu foto en: {currentImageSrc}</div>
             </div>
-            <div className="trabajo-placeholder-title">{trabajo.titulo}</div>
-            <div className="trabajo-placeholder-hint">Espacio para tu foto en: {trabajo.imagen}</div>
+
+            {currentImageLabel && (
+              <div className="modal-img-caption">
+                {currentImageLabel}
+              </div>
+            )}
           </div>
+
+          {/* Miniaturas interactivas si tiene más de 1 foto (ej. el clóset cerrado y abierto) */}
+          {trabajo.imagenes && trabajo.imagenes.length > 1 && (
+            <div className="modal-thumbnails-bar">
+              {trabajo.imagenes.map((imgItem, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className={`modal-thumb-btn ${activeImgIndex === idx ? 'active' : ''}`}
+                  onClick={() => setActiveImgIndex(idx)}
+                >
+                  <img src={imgItem.src} alt={imgItem.label} className="modal-thumb-img" />
+                  <span className="modal-thumb-text">{imgItem.label}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Información y especificaciones */}

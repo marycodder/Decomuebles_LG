@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Process() {
+export default function Process({ onNavigate }) {
   const steps = [
     {
       num: "01",
@@ -27,6 +27,18 @@ export default function Process() {
   return (
     <section id="proceso" className="section process-section">
       <div className="container">
+
+        {onNavigate && (
+          <div className="section-breadcrumb-bar">
+            <button
+              type="button"
+              className="breadcrumb-back-btn"
+              onClick={() => onNavigate('inicio')}
+            >
+              ← Volver al inicio
+            </button>
+          </div>
+        )}
 
         <div className="section-header">
           <div className="section-tag tag-olive">Método de trabajo</div>

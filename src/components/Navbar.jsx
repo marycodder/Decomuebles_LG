@@ -2,11 +2,21 @@ import React, { useState } from 'react';
 import { siteConfig } from '../config/siteConfig';
 import { MapPinIcon, MenuIcon, CloseIcon } from './Icons';
 
-export default function Navbar() {
+export default function Navbar({ activeSection = 'inicio', onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const closeMenu = () => setMobileMenuOpen(false);
+
+  const handleNavClick = (sectionId, e) => {
+    e.preventDefault();
+    closeMenu();
+    if (onNavigate) {
+      onNavigate(sectionId);
+    } else {
+      window.location.hash = sectionId;
+    }
+  };
 
   return (
     <header className="navbar-wrapper">
@@ -31,7 +41,11 @@ export default function Navbar() {
 
       {/* Navegación principal */}
       <nav className="container navbar">
-        <a href="#inicio" className="brand-logo" onClick={closeMenu}>
+        <a
+          href="#inicio"
+          className="brand-logo"
+          onClick={(e) => handleNavClick('inicio', e)}
+        >
           <img
             src="/logo.png"
             alt="Logo DecoMuebles LG"
@@ -39,26 +53,56 @@ export default function Navbar() {
           />
           <div className="brand-name">
             {siteConfig.brandName}
-            <span>Muebles a Medida</span>
+            <span>Muebles a medida</span>
           </div>
         </a>
 
         {/* Links de navegación */}
         <ul className={`nav-links ${mobileMenuOpen ? 'is-open' : ''}`}>
           <li>
-            <a href="#inicio" className="nav-link" onClick={closeMenu}>Inicio</a>
+            <a
+              href="#inicio"
+              className={`nav-link ${activeSection === 'inicio' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick('inicio', e)}
+            >
+              Inicio
+            </a>
           </li>
           <li>
-            <a href="#servicios" className="nav-link" onClick={closeMenu}>Servicios</a>
+            <a
+              href="#servicios"
+              className={`nav-link ${activeSection === 'servicios' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick('servicios', e)}
+            >
+              Servicios
+            </a>
           </li>
           <li>
-            <a href="#trabajos" className="nav-link" onClick={closeMenu}>Trabajos realizados</a>
+            <a
+              href="#trabajos"
+              className={`nav-link ${activeSection === 'trabajos' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick('trabajos', e)}
+            >
+              Trabajos realizados
+            </a>
           </li>
           <li>
-            <a href="#proceso" className="nav-link" onClick={closeMenu}>Proceso</a>
+            <a
+              href="#proceso"
+              className={`nav-link ${activeSection === 'proceso' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick('proceso', e)}
+            >
+              Proceso
+            </a>
           </li>
           <li>
-            <a href="#cotizador" className="nav-link" onClick={closeMenu}>Cotizador</a>
+            <a
+              href="#cotizador"
+              className={`nav-link ${activeSection === 'cotizador' ? 'active' : ''}`}
+              onClick={(e) => handleNavClick('cotizador', e)}
+            >
+              Cotizador
+            </a>
           </li>
         </ul>
 

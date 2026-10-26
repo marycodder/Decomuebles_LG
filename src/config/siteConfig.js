@@ -16,8 +16,8 @@ export const siteConfig = {
 
   // OTROS DATOS DE CONTACTO
   email: "decomuebleslg@gmail.com",
-  instagram: "@decolmuebles_lg",
-  instagramUrl: "https://instagram.com/decolmuebles_lg",
+  instagram: "@decolmuebleslg",
+  instagramUrl: "https://www.instagram.com/decomuebleslg?stkn=NGNibHQ2bnQ1YWx6",
   location: "Viña del Mar y comunas aledañas",
   horario: "Lunes a Sábado: 09:00 a 19:00 hrs",
 

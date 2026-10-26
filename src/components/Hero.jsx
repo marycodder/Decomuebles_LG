@@ -10,7 +10,14 @@ import {
   SparklesIcon
 } from './Icons';
 
-export default function Hero() {
+export default function Hero({ onNavigate }) {
+  const handleVerTrabajos = (e) => {
+    if (onNavigate) {
+      e.preventDefault();
+      onNavigate('trabajos');
+    }
+  };
+
   return (
     <section id="inicio" className="hero-section">
       <div className="container">
@@ -48,7 +55,12 @@ export default function Hero() {
                 <span>Cotizar por WhatsApp</span>
               </a>
 
-              <a href="#trabajos" className="btn btn-outline" style={{ padding: '16px 28px' }}>
+              <a
+                href="#trabajos"
+                className="btn btn-outline"
+                style={{ padding: '16px 28px' }}
+                onClick={handleVerTrabajos}
+              >
                 <span>Ver trabajos realizados</span>
                 <ArrowRightIcon size={18} />
               </a>

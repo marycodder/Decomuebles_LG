@@ -399,7 +399,8 @@ img {
   padding: 6px 0;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--clr-warm-wood-hover);
 }
 
@@ -414,7 +415,8 @@ img {
   transition: var(--transition);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
@@ -1070,6 +1072,7 @@ img {
   line-height: 1.55;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1636,6 +1639,33 @@ dialog.trabajo-modal::backdrop {
   margin-bottom: 56px;
 }
 
+.footer-top.footer-simplified {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 48px;
+  max-width: 960px;
+  margin: 0 auto 48px auto;
+}
+
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-instagram-link {
+  color: var(--clr-warm-wood);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.footer-instagram-link:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
 .footer-brand h3 {
   color: #FFFFFF;
   font-size: 1.6rem;
@@ -1743,3 +1773,144 @@ dialog.trabajo-modal::backdrop {
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   INTERACTIVIDAD DE FOTOS MÚLTIPLES & NAVEGACIÓN
+   ========================================================================== */
+
+/* Barra de migas de pan / retorno al inicio */
+.section-breadcrumb-bar {
+  margin-bottom: 24px;
+}
+
+.breadcrumb-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--clr-dark-wood);
+  background-color: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.breadcrumb-back-btn:hover {
+  background-color: var(--clr-warm-wood);
+  color: var(--clr-dark-wood-deep);
+  border-color: var(--clr-warm-wood);
+  transform: translateX(-4px);
+}
+
+/* Switcher de fotos directo en la tarjeta (ej. Clóset Cerrado / Abierto) */
+.trabajo-photo-switcher {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  display: flex;
+  gap: 4px;
+  background: rgba(38, 27, 18, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.photo-switch-btn {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  color: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  transition: var(--transition);
+}
+
+.photo-switch-btn:hover {
+  color: #FFFFFF;
+}
+
+.photo-switch-btn.active {
+  background-color: var(--clr-warm-wood);
+  color: var(--clr-dark-wood-deep);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Modal con visualización de fotos múltiples y miniaturas */
+.modal-main-img-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1410;
+}
+
+.modal-active-img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  transition: opacity 0.25s ease;
+}
+
+.modal-img-caption {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(38, 27, 18, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.825rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.modal-thumbnails-bar {
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: var(--clr-bg);
+  border-top: 1px solid var(--clr-border);
+  overflow-x: auto;
+}
+
+.modal-thumb-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  background-color: var(--clr-surface);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modal-thumb-btn.active {
+  border-color: var(--clr-warm-wood);
+  background-color: var(--clr-warm-wood-soft);
+}
+
+.modal-thumb-img {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.modal-thumb-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--clr-dark-wood);
+}
+

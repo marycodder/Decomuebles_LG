@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { siteConfig } from '../config/siteConfig';
 import { WhatsAppIcon, SendIcon, ShieldCheckIcon } from './Icons';
 
-export default function CotizadorWhatsApp() {
+export default function CotizadorWhatsApp({ onNavigate }) {
   const [tipoMueble, setTipoMueble] = useState("Cocina Integral");
   const [medidas, setMedidas] = useState("");
   const [comuna, setComuna] = useState("");
@@ -31,6 +31,18 @@ export default function CotizadorWhatsApp() {
   return (
     <section id="cotizador" className="section cotizador-section">
       <div className="container">
+
+        {onNavigate && (
+          <div className="section-breadcrumb-bar">
+            <button
+              type="button"
+              className="breadcrumb-back-btn"
+              onClick={() => onNavigate('inicio')}
+            >
+              ← Volver al inicio
+            </button>
+          </div>
+        )}
 
         <div className="section-header">
           <div className="section-tag tag-olive">Cotización inmediata</div>
@@ -75,12 +87,9 @@ export default function CotizadorWhatsApp() {
                 >
                   <option value="Cocina Integral">Cocina integral a medida</option>
                   <option value="Clóset o Vestidor">Clóset - Walk-in closet</option>
-                  <option value="Muebles de bañ o">Muebles de baño</option>
-                  <option value="Muebles de TV o Living">Muebles para TV - Rack de Living</option>
-                  <option value="Mueble de oficina - Home-Office">Estación de trabajo - Home-Office</option>
-                  <option value="Diseños especiales">Diseños especiales</option>
+                  <option value="Muebles de baño / Vanitorio">Mueble de baño / Vanitorio</option>
                   <option value="Varios muebles">Varios Muebles</option>
-                  <option value="Remodelación completa de varios espacios">Remodelación completa de varios espacios</option>
+                  <option value="Remodelación completa de espacios">Remodelación completa de espacios</option>
                 </select>
               </div>
 
@@ -108,7 +117,7 @@ export default function CotizadorWhatsApp() {
                   type="text"
                   id="comuna"
                   className="form-input"
-                  placeholder="Ej: Las Condes, Maipú, Providencia, etc."
+                  placeholder="Ej: Viña del Mar, Valparaíso, Quilpué, etc."
                   value={comuna}
                   onChange={(e) => setComuna(e.target.value)}
                 />
